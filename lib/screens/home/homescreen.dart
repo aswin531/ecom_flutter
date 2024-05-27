@@ -1,4 +1,4 @@
-import 'package:ecom/screens/home/widgets/carousel.dart';
+import 'package:ecom/screens/home/widgets/category.dart';
 import 'package:ecom/screens/home/widgets/homecustomappbar.dart';
 import 'package:ecom/screens/home/widgets/searchbar.dart';
 import 'package:ecom/screens/home/widgets/slider.dart';
@@ -37,8 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   currentSlide: currentSlider),
               const SizedBox(height: 20),
+              const Category()
               // MyCarousel(
-              //   onChange: (p0, p1) => null,
+              //   onChange: (p0, p1) {},
+              //   currentSlide: currentSlider,
               // )
             ],
           ),

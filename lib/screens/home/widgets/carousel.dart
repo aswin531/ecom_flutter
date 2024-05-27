@@ -3,8 +3,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 class MyCarousel extends StatelessWidget {
   final Function(int, CarouselPageChangedReason) onChange;
+  final int currentSlide;
 
-  const MyCarousel({super.key, required this.onChange});
+  const MyCarousel({super.key, required this.onChange, required this.currentSlide});
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +45,18 @@ class MyCarousel extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      body: Center(
-        child: MyCarousel(
-          onChange: (index, reason) {
-            // Handle the page change if necessary
-            // ignore: avoid_print
-            print("Page changed to $index");
-          },
-        ),
-      ),
-    ),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     home: Scaffold(
+//       body: Center(
+//         child: MyCarousel(currentSlide: ,
+//           onChange: (index, reason) {
+//             // Handle the page change if necessary
+//             // ignore: avoid_print
+//             print("Page changed to $index");
+//           },
+//         ),
+//       ),
+//     ),
+//   ));
+// }
