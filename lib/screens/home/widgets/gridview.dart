@@ -1,3 +1,5 @@
+import 'package:ecom/models/productsmodel.dart';
+import 'package:ecom/screens/home/widgets/productcard.dart';
 import 'package:ecom/styles/colors.dart';
 import 'package:ecom/widgets/customtext.dart';
 import 'package:flutter/material.dart';
@@ -25,17 +27,19 @@ class HomeGridviewItems extends StatelessWidget {
             ),
           ],
         ),
-        Container(
-          height: 400,
-          child: GridView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2),
-            itemBuilder: (context, index) {
-              return Card();
-            },
-          ),
+        const SizedBox(height: 10),
+        GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2),
+          itemCount: products.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ProductItemsCard(product: products[index]),
+            );
+          },
         )
       ],
     );

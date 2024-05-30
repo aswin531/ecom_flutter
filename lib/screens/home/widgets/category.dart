@@ -1,5 +1,4 @@
 import 'package:ecom/models/categorymodel.dart';
-import 'package:ecom/screens/home/widgets/gridviewitems.dart';
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {

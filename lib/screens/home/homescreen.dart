@@ -1,11 +1,12 @@
+import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/screens/home/widgets/category.dart';
-import 'package:ecom/screens/home/widgets/gridviewitems.dart';
+import 'package:ecom/screens/home/widgets/gridview.dart';
 import 'package:ecom/screens/home/widgets/homecustomappbar.dart';
 import 'package:ecom/screens/home/widgets/searchbar.dart';
 import 'package:ecom/screens/home/widgets/slider.dart';
 import 'package:ecom/styles/colors.dart';
+import 'package:ecom/widgets/customtext.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -42,10 +43,34 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Category(),
                 const SizedBox(height: 10),
                 const HomeGridviewItems()
-
-                // MyCarousel(
-                //   onChange: (p0, p1) {},
-                //   currentSlide: currentSlider,
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                //     CustomText(
+                //       data: "Hot Deals",
+                //       fw: FontWeight.w800,
+                //       size: 25,
+                //     ),
+                //     CustomText(
+                //       data: "See all",
+                //       fw: FontWeight.w500,
+                //       size: 16,
+                //       color: black,
+                //     ),
+                //   ],
+                // ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
+                // GridView.builder(
+                //   itemCount: products.length,
+                //   shrinkWrap: true,
+                //   physics: const NeverScrollableScrollPhysics(),
+                //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                //       crossAxisCount: 2),
+                //   itemBuilder: (context, index) {
+                //     return const Card();
+                //   },
                 // )
               ],
             ),
@@ -55,3 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
+
+ // MyCarousel(
+                //   onChange: (p0, p1) {},
+                //   currentSlide: currentSlider,
+                // )
