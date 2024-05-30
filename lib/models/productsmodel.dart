@@ -40,10 +40,10 @@ final List<Product> products = [
       rate: 4.3,
       quantity: 1),
   Product(
-      title: "Pixel 8",
+      title: "H&M",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/pixel8bg.png",
+      image: "assets/images/hm.png",
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",
@@ -52,10 +52,10 @@ final List<Product> products = [
       rate: 4.3,
       quantity: 1),
   Product(
-      title: "Pixel 8",
+      title: "Nike",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/pixel8bg.png",
+      image: "assets/images/productssneaker.png",
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",
@@ -64,10 +64,10 @@ final List<Product> products = [
       rate: 4.3,
       quantity: 1),
   Product(
-      title: "Pixel 8",
+      title: "Casio",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/pixel8bg.png",
+      image: "assets/images/watchprod.png",
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",

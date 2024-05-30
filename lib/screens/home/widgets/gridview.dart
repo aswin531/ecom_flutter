@@ -32,7 +32,7 @@ class HomeGridviewItems extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2),
+              crossAxisCount: 2, childAspectRatio: 0.85, mainAxisSpacing: 10),
           itemCount: products.length,
           itemBuilder: (context, index) {
             return Padding(

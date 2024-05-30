@@ -15,20 +15,21 @@ class ProductItemsCard extends StatelessWidget {
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: bgRainy),
+                borderRadius: BorderRadius.circular(20), color: greylight),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 15,
+                  height: 010,
                 ),
                 Center(
                   child: Image.asset(
                     product.image ?? "assets/images/mobilelogo.jpg",
-                    width: 120,
-                    height: 120,
+                    width: 200,
+                    height: 200,
                   ),
-                )
+                ),
+                Text(product.title ?? "Null")
               ],
             ),
           )
