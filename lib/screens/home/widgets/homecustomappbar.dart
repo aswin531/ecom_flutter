@@ -1,4 +1,3 @@
-
 import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -12,30 +11,20 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        // IconButton(
-        //     style: IconButton.styleFrom(
-        //         backgroundColor: kDefaultIconDarkColor),
-        //     onPressed: () {},
-        //     icon: Image.asset(
-        //       'name',
-        //       height: 20,
-        //     )),
         IconButton(
             style: IconButton.styleFrom(
-                backgroundColor: kDefaultIconLightColor,
-                padding: const EdgeInsets.all(5)),
+                backgroundColor: greylight, padding: const EdgeInsets.all(5)),
             onPressed: () {},
             icon: Icon(
-              Icons.abc,
+              Icons.grid_view_rounded,
               color: black,
             )),
         IconButton(
             style: IconButton.styleFrom(
-                backgroundColor: kDefaultIconLightColor,
-                padding: const EdgeInsets.all(5)),
+                backgroundColor: greylight, padding: const EdgeInsets.all(5)),
             onPressed: () {},
             icon: Icon(
-              Icons.notifications_active_outlined,
+              Icons.notifications,
               color: black,
               size: 30,
             )),

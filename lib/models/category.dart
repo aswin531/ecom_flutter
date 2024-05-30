@@ -5,8 +5,8 @@ class Category {
 }
 
 final List<Category> categories = [
-  Category(title: "Shoes", image: 'image'),
-  Category(title: "Fashion", image: 'image'),
-  Category(title: "Mobiles", image: 'image'),
-  Category(title: "Watches", image: 'image'),
+  Category(title: "Shoes", image: "assets/images/watch.png"),
+  Category(title: "Fashion", image: 'assets/images/fashion.jpg'),
+  Category(title: "Mobiles", image: 'assets/images/iphone.webp'),
+  Category(title: "Watches", image: "assets/images/watch.png"),
 ];

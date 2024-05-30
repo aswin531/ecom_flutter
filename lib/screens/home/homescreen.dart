@@ -18,31 +18,32 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
-              const CustomAppBar(),
-              const SizedBox(height: 20),
-              const CustomSearchBar(),
-              const SizedBox(height: 20),
-              ImageSlider(
-                  onChange: (value) {
-                    setState(() {
-                      currentSlider = value;
-                    });
-                  },
-                  currentSlide: currentSlider),
-              const SizedBox(height: 20),
-              const Category()
-              // MyCarousel(
-              //   onChange: (p0, p1) {},
-              //   currentSlide: currentSlider,
-              // )
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const CustomAppBar(),
+                const SizedBox(height: 15),
+                const CustomSearchBar(),
+                const SizedBox(height: 20),
+                ImageSlider(
+                    onChange: (value) {
+                      setState(() {
+                        currentSlider = value;
+                      });
+                    },
+                    currentSlide: currentSlider),
+                const SizedBox(height: 20),
+                const Category()
+                // MyCarousel(
+                //   onChange: (p0, p1) {},
+                //   currentSlide: currentSlider,
+                // )
+              ],
+            ),
           ),
         ),
       ),

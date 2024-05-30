@@ -20,7 +20,7 @@ class Category extends StatelessWidget {
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         image: AssetImage(categories[index].image),
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitWidth,
                         // filterQuality: FilterQuality.high
                       )),
                 ),
@@ -35,11 +35,9 @@ class Category extends StatelessWidget {
               ],
             );
           },
-          separatorBuilder: (context, index) {
-            return const Divider(
-              thickness: 5,
-            );
-          },
+          separatorBuilder: (context, index) => const SizedBox(
+                width: 20,
+              ),
           itemCount: categories.length),
     );
   }

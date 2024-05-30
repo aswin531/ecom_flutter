@@ -12,7 +12,7 @@ class ImageSlider extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          height: 220,
+          height: 240,
           width: double.infinity,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
@@ -43,23 +43,26 @@ class ImageSlider extends StatelessWidget {
           ),
         ),
         Positioned.fill(
-          bottom: 10,
+            bottom: 10,
             child: Align(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-                5,
-                (index) => AnimatedContainer(
-                      duration: const Duration(microseconds: 300),
-                      width: currentSlide == index ? 15 : 8,
-                      height: 8,
-                      margin: const EdgeInsets.only(right: 3),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10)),
-                      color: currentSlide == index ? black : transparent,
-                    )),
-          ),
-        ))
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                    4,
+                    (index) => AnimatedContainer(
+                          duration: const Duration(microseconds: 300),
+                          width: currentSlide == index ? 15 : 8,
+                          height: 8,
+                          margin: const EdgeInsets.only(right: 3),
+                          decoration: BoxDecoration(
+                              color:
+                                  currentSlide == index ? black : transparent,
+                              border: Border.all(color: black),
+                              borderRadius: BorderRadius.circular(10)),
+                        )),
+              ),
+            ))
       ],
     );
   }
