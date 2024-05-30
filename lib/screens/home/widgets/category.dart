@@ -1,4 +1,5 @@
-import 'package:ecom/models/category.dart';
+import 'package:ecom/models/categorymodel.dart';
+import 'package:ecom/screens/home/widgets/gridviewitems.dart';
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
@@ -15,7 +16,7 @@ class Category extends StatelessWidget {
               children: [
                 Container(
                   height: 65,
-                  width: 65,
+                  width: 77,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
@@ -31,7 +32,7 @@ class Category extends StatelessWidget {
                   categories[index].title,
                   style: const TextStyle(
                       fontSize: 16, fontWeight: FontWeight.bold),
-                )
+                ),
               ],
             );
           },

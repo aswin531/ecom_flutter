@@ -1,9 +1,11 @@
 import 'package:ecom/screens/home/widgets/category.dart';
+import 'package:ecom/screens/home/widgets/gridviewitems.dart';
 import 'package:ecom/screens/home/widgets/homecustomappbar.dart';
 import 'package:ecom/screens/home/widgets/searchbar.dart';
 import 'package:ecom/screens/home/widgets/slider.dart';
 import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,7 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     currentSlide: currentSlider),
                 const SizedBox(height: 20),
-                const Category()
+                const Category(),
+                const SizedBox(height: 10),
+                const HomeGridviewItems()
+
                 // MyCarousel(
                 //   onChange: (p0, p1) {},
                 //   currentSlide: currentSlider,

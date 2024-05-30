@@ -27,15 +27,19 @@ class ImageSlider extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
                 Image.asset(
-                  'assets/images/jj.jpg',
-                  fit: BoxFit.fill,
-                ),
-                Image.asset(
                   'assets/images/vk18.jpg',
                   fit: BoxFit.fill,
                 ),
                 Image.asset(
+                  'assets/images/casio.png',
+                  fit: BoxFit.fill,
+                ),
+                Image.asset(
                   'assets/images/pixel7.jpg',
+                  fit: BoxFit.fill,
+                ),
+                Image.asset(
+                  'assets/images/jj.jpg',
                   fit: BoxFit.fill,
                 ),
               ],
@@ -49,7 +53,7 @@ class ImageSlider extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
-                    4,
+                    5,
                     (index) => AnimatedContainer(
                           duration: const Duration(microseconds: 300),
                           width: currentSlide == index ? 15 : 8,
