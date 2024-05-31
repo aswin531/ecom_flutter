@@ -1,15 +1,19 @@
 import 'package:ecom/models/productsmodel.dart';
+import 'package:ecom/routes/servicelocator.dart';
 import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductItemsCard extends StatelessWidget {
   final Product product;
-  const ProductItemsCard({super.key, required this.product});
+  ProductItemsCard({super.key, required this.product});
+  final NavigationService _navigationService = getIt<NavigationService>();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        _navigationService.navigateTo('/details');
+      },
       child: Stack(
         children: [
           Container(
