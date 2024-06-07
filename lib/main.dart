@@ -1,11 +1,7 @@
 import 'package:ecom/routes/approuter.dart';
-import 'package:ecom/routes/servicelocator.dart';
-import 'package:ecom/screens/nav_bar_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  setupLocator();
-  getIt<NavigationService>().router = router;
   runApp(const MyApp());
 }
 
