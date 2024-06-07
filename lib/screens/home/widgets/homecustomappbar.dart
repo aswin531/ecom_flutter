@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.grid_view_rounded,
-              color: black,
+              color: bgThunderstorm,
             )),
         IconButton(
             style: IconButton.styleFrom(
@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.notifications,
-              color: black,
+              color: bgThunderstorm,
               size: 30,
             )),
       ],

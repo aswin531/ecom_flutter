@@ -5,13 +5,13 @@ import 'package:go_router/go_router.dart';
 
 class ProductItemsCard extends StatelessWidget {
   final Product product;
-  ProductItemsCard({super.key, required this.product});
+  const ProductItemsCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.go('/details', extra: product);
+        context.push('/details', extra: product);
       },
       child: Stack(
         children: [

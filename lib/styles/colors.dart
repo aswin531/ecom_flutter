@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 Color white = Colors.white;
 Color blue = Colors.blue;
 Color black = Colors.black;
+Color lightBlack = Colors.grey[850]!;
+Color offWhite =const  Color(0xFFF5F5F5);
 Color grey = Colors.grey;
 Color transparent = Colors.transparent;
 final greylight = Colors.grey[200];

@@ -1,8 +1,13 @@
+import 'package:ecom/providers/bottomnavbarprovider.dart';
 import 'package:ecom/routes/approuter.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => BottomNavBarProvider(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
