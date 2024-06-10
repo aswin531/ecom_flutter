@@ -31,7 +31,7 @@ class ProductItemsCard extends StatelessWidget {
                   flex: 3,
                   child: Center(
                     child: Image.asset(
-                      product.image ?? "assets/images/mobilelogo.jpg",
+                      product.primaryImage,
                       width: 200,
                       height: 200,
                     ),

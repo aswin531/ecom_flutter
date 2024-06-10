@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Product {
   String? title;
   String? description;
-  String? image;
+  List<String>? images;
   String? review;
   String? seller;
   String? price;
@@ -16,7 +16,7 @@ class Product {
   Product(
       {this.title,
       this.description,
-      this.image,
+      this.images,
       this.review,
       this.seller,
       this.price,
@@ -24,6 +24,10 @@ class Product {
       this.rate,
       this.quantity,
       this.colors});
+
+  String get primaryImage => images?.isNotEmpty == true
+      ? images![0]
+      : 'assets/images/default_image.jpg';
 }
 
 final List<Product> products = [
@@ -31,7 +35,11 @@ final List<Product> products = [
       title: "Pixel 8",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/pixel8bg.png",
+      images: [
+        "assets/images/pixel8bg.png",
+        "assets/images/pixel8bg.png",
+        "assets/images/pixel8bg.png"
+      ],
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",
@@ -43,7 +51,11 @@ final List<Product> products = [
       title: "H&M",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/hm.png",
+      images: [
+        "assets/images/hm.png",
+        "assets/images/hm.png",
+        "assets/images/hm.png"
+      ],
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",
@@ -55,7 +67,11 @@ final List<Product> products = [
       title: "Nike",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/productssneaker.png",
+      images: [
+        "assets/images/productssneaker.png",
+        "assets/images/productssneaker.png",
+        "assets/images/productssneaker.png"
+      ],
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",
@@ -67,7 +83,11 @@ final List<Product> products = [
       title: "Casio",
       description:
           "Google Pixel 8 is powered by a nona-core Google Tensor G3 processor.",
-      image: "assets/images/watchprod.png",
+      images: [
+        "assets/images/watchprod.png",
+        "assets/images/watchprod.png",
+        "assets/images/watchprod.png"
+      ],
       price: "60000",
       seller: "Google pvt ltd",
       category: "Mobiles",

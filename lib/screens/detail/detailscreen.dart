@@ -1,8 +1,11 @@
 import 'package:ecom/models/productsmodel.dart';
+import 'package:ecom/providers/pro_detail_provider.dart';
 import 'package:ecom/screens/detail/widgets/detailappbar.dart';
 import 'package:ecom/screens/detail/widgets/imageslider.dart';
+import 'package:ecom/screens/detail/widgets/title_detail_screen.dart';
 import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class DetailScreen extends StatefulWidget {
   final Product product;
@@ -14,7 +17,7 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   int currentImage = 0;
-  //int currentSlide = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,28 +29,23 @@ class _DetailScreenState extends State<DetailScreen> {
               color: black,
             ),
             const DetailAppBar(),
-            DetailImageSlider(
+            Consumer<ProductDetailProvider>(
+                builder: (context, provider, child) {
+              return DetailImageSlider(
                 onChange: (index) {
                   setState(() {
                     currentImage = index;
                   });
                 },
-                image: widget.product.image!),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: List.generate(
-            //       5,
-            //       (index) => AnimatedContainer(
-            //             duration: const Duration(microseconds: 300),
-            //             width: currentImage == index ? 15 : 8,
-            //             height: 8,
-            //             margin: const EdgeInsets.only(right: 3),
-            //             decoration: BoxDecoration(
-            //                 color: currentImage == index ? black : transparent,
-            //                 border: Border.all(color: black),
-            //                 borderRadius: BorderRadius.circular(10)),
-            //           )),
-            // ),
+                images: widget.product.images ?? [],
+              );
+            }),
+            const SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: TitleDetailScreen(product: widget.product),
+            ),
           ],
         ),
       ),

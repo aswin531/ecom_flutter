@@ -1,13 +1,27 @@
 import 'package:ecom/providers/bottomnavbarprovider.dart';
+import 'package:ecom/providers/pro_detail_provider.dart';
 import 'package:ecom/routes/approuter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+// void main() {
+//   runApp(multiPro(
+//      ChangeNotifierProvider(
+//       create: (context) => BottomNavBarProvider(),
+//       child: const MyApp(),
+//     ),
+//   ));
+// }
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (context) => BottomNavBarProvider(),
-    child: const MyApp(),
-  ));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
+        ChangeNotifierProvider(create: (_) => ProductDetailProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
