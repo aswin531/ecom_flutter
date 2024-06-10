@@ -1,5 +1,5 @@
 import 'package:ecom/models/productsmodel.dart';
-import 'package:ecom/screens/deatail/detailscreen.dart';
+import 'package:ecom/screens/detail/detailscreen.dart';
 import 'package:ecom/screens/nav_bar_screen.dart';
 import 'package:go_router/go_router.dart';
 

@@ -1,6 +1,7 @@
 import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/screens/home/widgets/productcard.dart';
 import 'package:ecom/styles/colors.dart';
+import 'package:ecom/styles/responsive.dart';
 import 'package:ecom/widgets/customtext.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class HomeGridviewItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final responsive = Responsive(context);
     return Column(
       children: [
         Row(
@@ -17,12 +19,12 @@ class HomeGridviewItems extends StatelessWidget {
             CustomText(
               data: "Hot Deals",
               fw: FontWeight.w800,
-              size: 25,
+              size: responsive.fontSize(6),
             ),
             CustomText(
               data: "See all",
               fw: FontWeight.w500,
-              size: 16,
+              size: responsive.fontSize(4),
               color: black,
             ),
           ],
@@ -31,8 +33,10 @@ class HomeGridviewItems extends StatelessWidget {
         GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, childAspectRatio: 0.85, mainAxisSpacing: 10),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: responsive.gridCount(),
+              childAspectRatio: 0.85,
+              mainAxisSpacing: 10),
           itemCount: products.length,
           itemBuilder: (context, index) {
             return Padding(

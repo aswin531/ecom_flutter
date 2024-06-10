@@ -67,7 +67,7 @@ class MyCarousel extends StatelessWidget {
                 (index) => AnimatedContainer(
                   duration: const Duration(milliseconds: 300),
                   width: currentSlide == index ? 15 : 8,
-                  height: 8,
+                  height: 6,
                   margin: const EdgeInsets.only(right: 3),
                   decoration: BoxDecoration(
                     color: currentSlide == index

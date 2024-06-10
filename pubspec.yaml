@@ -55,6 +55,12 @@ dev_dependencies:
   # rules and activating additional ones.
   # build_runner: ^2.4.9
   # injectable_generator: ^1.5.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.jpg"   
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
