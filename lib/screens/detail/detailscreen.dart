@@ -45,6 +45,7 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             Expanded(
               child: TitleDetailScreen(product: widget.product),
+              
             ),
           ],
         ),
