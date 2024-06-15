@@ -41,9 +41,10 @@ class DiscrptionSection extends StatelessWidget {
           ],
         ),
         const SizedBox(
-          height: 10,
+          height: 20,
         ),
-        Text(description, style: const TextStyle(color: Colors.black)),
+        Text(description,
+            style: const TextStyle(color: Colors.black, fontSize: 20)),
       ],
     );
   }

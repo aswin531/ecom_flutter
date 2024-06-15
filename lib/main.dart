@@ -1,5 +1,6 @@
 import 'package:ecom/providers/bottomnavbarprovider.dart';
 import 'package:ecom/providers/cart_provider.dart';
+import 'package:ecom/providers/current_image_provider.dart';
 import 'package:ecom/providers/pro_detail_provider.dart';
 import 'package:ecom/routes/approuter.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => BottomNavBarProvider()),
         ChangeNotifierProvider(create: (_) => ProductDetailProvider()),
+        ChangeNotifierProvider(create: (_) => DetaiScreenProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
       ],
       child: const MyApp(),

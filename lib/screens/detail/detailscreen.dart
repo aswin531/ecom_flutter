@@ -1,4 +1,5 @@
 import 'package:ecom/models/productsmodel.dart';
+import 'package:ecom/providers/current_image_provider.dart';
 import 'package:ecom/providers/pro_detail_provider.dart';
 import 'package:ecom/screens/detail/widgets/add_cart.dart';
 import 'package:ecom/screens/detail/widgets/detailappbar.dart';
@@ -8,22 +9,15 @@ import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class DetailScreen extends StatefulWidget {
+class DetailScreen extends StatelessWidget {
   final Product product;
   const DetailScreen({super.key, required this.product});
-
-  @override
-  State<DetailScreen> createState() => _DetailScreenState();
-}
-
-class _DetailScreenState extends State<DetailScreen> {
-  int currentImage = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: offWhite,
-      floatingActionButton: AddToCart(product: widget.product),
+      floatingActionButton: AddToCart(product: product),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       body: SafeArea(
@@ -34,21 +28,24 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             const DetailAppBar(),
             Consumer<ProductDetailProvider>(
-                builder: (context, provider, child) {
-              return DetailImageSlider(
-                onChange: (index) {
-                  setState(() {
-                    currentImage = index;
-                  });
-                },
-                images: widget.product.images ?? [],
-              );
-            }),
+              builder: (context, productDetailProvider, child) {
+                return Consumer<DetaiScreenProvider>(
+                  builder: (context, detailScreenProvider, child) {
+                    return DetailImageSlider(
+                      onChange: (index) {
+                        detailScreenProvider.setCurrentImage(index);
+                      },
+                      images: product.images ?? [],
+                    );
+                  },
+                );
+              },
+            ),
             const SizedBox(
               height: 10,
             ),
             Expanded(
-              child: TitleDetailScreen(product: widget.product),
+              child: TitleDetailScreen(product: product),
             ),
           ],
         ),

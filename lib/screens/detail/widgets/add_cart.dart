@@ -20,9 +20,10 @@ class _AddToCartState extends State<AddToCart> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
-        height: 85,
+        width: double.infinity,
+        height: 70,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
+          borderRadius: BorderRadius.circular(20),
           color: black,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -76,6 +77,7 @@ class _AddToCartState extends State<AddToCart> {
               onTap: () {
                 provider.toggleFavourite(widget.product);
                 const snackbar = SnackBar(
+                  clipBehavior: Clip.antiAlias,
                   dismissDirection: DismissDirection.horizontal,
                   backgroundColor: green,
                   elevation: 5,
