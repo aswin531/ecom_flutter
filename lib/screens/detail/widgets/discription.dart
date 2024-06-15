@@ -1,9 +1,12 @@
+import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
 
 class DiscrptionSection extends StatelessWidget {
   final String description;
-  const DiscrptionSection({super.key, required this.description});
+  final Product product;
+  const DiscrptionSection(
+      {super.key, required this.description, required this.product});
 
   @override
   Widget build(BuildContext context) {

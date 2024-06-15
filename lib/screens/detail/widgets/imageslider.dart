@@ -4,10 +4,16 @@ import 'package:flutter/material.dart';
 class DetailImageSlider extends StatefulWidget {
   final Function(int) onChange;
   final List<String> images;
+  final String? productTag;
+
   const DetailImageSlider(
-      {super.key, required this.onChange, required this.images});
+      {super.key,
+      required this.onChange,
+      required this.images,
+      this.productTag});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DetailImageSliderState createState() => _DetailImageSliderState();
 }
 
@@ -38,7 +44,9 @@ class _DetailImageSliderState extends State<DetailImageSlider> {
                 widget.onChange(index);
               },
               itemBuilder: (context, index) {
-                return Image.asset(widget.images[index]);
+                return Hero(
+                    tag: widget.images[index],
+                    child: Image.asset(widget.images[index]));
               },
             ),
           ),
@@ -49,11 +57,11 @@ class _DetailImageSliderState extends State<DetailImageSlider> {
               (index) => AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
                 width: currentImage == index ? 15 : 8,
-                height: 8,
+                height: 5,
                 margin: const EdgeInsets.only(right: 3),
                 decoration: BoxDecoration(
-                  color: currentImage == index ? black : transparent,
-                  border: Border.all(color: black),
+                  color: currentImage == index ? blue : transparent,
+                  border: Border.all(color: bgFog),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

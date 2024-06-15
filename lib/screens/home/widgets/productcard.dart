@@ -1,13 +1,14 @@
 import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/styles/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductItemsCard extends StatelessWidget {
   final Product product;
-  const ProductItemsCard({super.key, required this.product});
+  const ProductItemsCard({
+    super.key,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,10 +31,13 @@ class ProductItemsCard extends StatelessWidget {
                 Flexible(
                   flex: 3,
                   child: Center(
-                    child: Image.asset(
-                      product.primaryImage,
-                      width: 200,
-                      height: 200,
+                    child: Hero(
+                      tag: '${product.primaryImage}_0',
+                      child: Image.asset(
+                        product.primaryImage,
+                        width: 200,
+                        height: 200,
+                      ),
                     ),
                   ),
                 ),
@@ -55,11 +59,35 @@ class ProductItemsCard extends StatelessWidget {
                                       color: product.colors?[index],
                                       shape: BoxShape.circle),
                                 ))),
+                    const SizedBox(
+                      height: 10,
+                    )
                   ],
                 )
               ],
             ),
-          )
+          ),
+          Positioned(
+              child: Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                  color: transparent,
+                  borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomLeft: Radius.circular(20))),
+              child: GestureDetector(
+                onTap: () {},
+                child: Icon(
+                  Icons.favorite,
+                  color: white,
+                  size: 22,
+                ),
+              ),
+            ),
+          ))
         ],
       ),
     );

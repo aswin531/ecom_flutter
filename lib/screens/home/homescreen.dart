@@ -40,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 15),
               const CustomSearchBar(),
               const SizedBox(height: 20),
+              const Category(),
               MyCarousel(
                 onChange: onPageChanged,
                 currentSlide: currentSlider,
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //     },
               //     currentSlide: currentSlider),
               const SizedBox(height: 20),
-              const Category(),
+
               // const SizedBox(height: 5),
               const HomeGridviewItems()
             ],

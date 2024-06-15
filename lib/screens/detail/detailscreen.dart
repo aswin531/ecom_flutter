@@ -1,5 +1,6 @@
 import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/providers/pro_detail_provider.dart';
+import 'package:ecom/screens/detail/widgets/add_cart.dart';
 import 'package:ecom/screens/detail/widgets/detailappbar.dart';
 import 'package:ecom/screens/detail/widgets/imageslider.dart';
 import 'package:ecom/screens/detail/widgets/title_detail_screen.dart';
@@ -22,6 +23,9 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: offWhite,
+      floatingActionButton: AddToCart(product: widget.product),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       body: SafeArea(
         child: Column(
           children: [
@@ -45,7 +49,6 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             Expanded(
               child: TitleDetailScreen(product: widget.product),
-              
             ),
           ],
         ),

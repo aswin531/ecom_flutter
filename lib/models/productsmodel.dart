@@ -10,7 +10,7 @@ class Product {
   String? price;
   String? category;
   double? rate;
-  int? quantity;
+  int quantity;
   List<Color>? colors;
 
   Product(
@@ -22,7 +22,7 @@ class Product {
       this.price,
       this.category,
       this.rate,
-      this.quantity,
+      required this.quantity,
       this.colors});
 
   String get primaryImage => images?.isNotEmpty == true

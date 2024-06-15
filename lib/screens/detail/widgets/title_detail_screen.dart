@@ -25,7 +25,10 @@ class TitleDetailScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ItemDetails(product: product),
-          DiscrptionSection(description: product.description!)
+          DiscrptionSection(
+            description: product.description!,
+            product: product,
+          )
         ],
       ),
     );
