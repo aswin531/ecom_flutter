@@ -1,6 +1,5 @@
 import 'package:ecom/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DiscrptionSection extends StatelessWidget {
   final String description;
@@ -10,6 +9,9 @@ class DiscrptionSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(
+          height: 5,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -26,7 +28,7 @@ class DiscrptionSection extends StatelessWidget {
               ),
             ),
             Text(
-              "Discription",
+              "Specifications",
               style: TextStyle(color: black),
             ),
             Text(
@@ -35,8 +37,10 @@ class DiscrptionSection extends StatelessWidget {
             )
           ],
         ),
-      const SizedBox(height: 5,),
-          const DiscrptionSection(  description: '',)    
+        const SizedBox(
+          height: 10,
+        ),
+        Text(description, style: const TextStyle(color: Colors.black)),
       ],
     );
   }

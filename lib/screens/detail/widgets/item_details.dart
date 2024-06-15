@@ -23,14 +23,14 @@ class _ItemDetailsState extends State<ItemDetails> {
           style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
         ),
         const SizedBox(
-          height: 5,
+          height: 10,
         ),
         Text(
           " \$${widget.product.price!}",
           style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
         ),
         const SizedBox(
-          height: 8,
+          height: 10,
         ),
         Row(
           children: [
@@ -115,6 +115,9 @@ class _ItemDetailsState extends State<ItemDetails> {
                           ),
                         ),
                       ))),
+        ),
+        const SizedBox(
+          height: 5,
         ),
       ],
     );
