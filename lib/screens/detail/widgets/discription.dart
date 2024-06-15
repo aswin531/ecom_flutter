@@ -1,5 +1,6 @@
 import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/styles/colors.dart';
+import 'package:ecom/styles/custom_text_style.dart';
 import 'package:flutter/material.dart';
 
 class DiscrptionSection extends StatelessWidget {
@@ -27,24 +28,23 @@ class DiscrptionSection extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 "Discription",
-                style: TextStyle(color: white, fontWeight: FontWeight.w600),
+                style: CustomTextStyles.buttonLabel(context),
               ),
             ),
             Text(
               "Specifications",
-              style: TextStyle(color: black),
+              style: CustomTextStyles.subtitle(context),
             ),
             Text(
               "Reviews",
-              style: TextStyle(color: black),
+              style: CustomTextStyles.subtitle(context),
             )
           ],
         ),
         const SizedBox(
           height: 20,
         ),
-        Text(description,
-            style: const TextStyle(color: Colors.black, fontSize: 20)),
+        Text(description, style: CustomTextStyles.bodyText(context)),
       ],
     );
   }

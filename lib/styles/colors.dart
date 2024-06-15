@@ -13,7 +13,7 @@ Color unSelectedGrey = const Color(0xFFB0BEC5);
 Color richCoral = const Color(0xFFFF5722); // Rich Coral
 
 const Color green = Colors.green;
-const Color primary = Colors.white;
+//const Color primary = Colors.white;
 const Color secondary = Colors.lightBlue;
 const Color accents = Color(0xFF247BA0);
 //Sunny

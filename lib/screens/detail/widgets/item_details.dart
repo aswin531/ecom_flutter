@@ -1,5 +1,6 @@
 import 'package:ecom/models/productsmodel.dart';
 import 'package:ecom/styles/colors.dart';
+import 'package:ecom/styles/custom_text_style.dart';
 import 'package:flutter/material.dart';
 
 class ItemDetails extends StatefulWidget {
@@ -20,14 +21,14 @@ class _ItemDetailsState extends State<ItemDetails> {
       children: [
         Text(
           widget.product.title!,
-          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+          style: CustomTextStyles.title(context),
         ),
         const SizedBox(
           height: 10,
         ),
         Text(
           " \$${widget.product.price!}",
-          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+          style: CustomTextStyles.priceTag(context),
         ),
         const SizedBox(
           height: 10,

@@ -3,6 +3,7 @@ import 'package:ecom/providers/cart_provider.dart';
 import 'package:ecom/providers/current_image_provider.dart';
 import 'package:ecom/providers/pro_detail_provider.dart';
 import 'package:ecom/routes/approuter.dart';
+import 'package:ecom/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,10 +36,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: CustomTheme.light,
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
       routerConfig: router,
     );
   }
