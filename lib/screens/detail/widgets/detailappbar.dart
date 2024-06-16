@@ -17,7 +17,7 @@ class DetailAppBar extends StatelessWidget {
               style: IconButton.styleFrom(
                   backgroundColor: white, padding: const EdgeInsets.all(5)),
               onPressed: () {
-                context.go('/');
+                context.pop();
               },
               icon: Icon(
                 Icons.arrow_back_ios_rounded,
