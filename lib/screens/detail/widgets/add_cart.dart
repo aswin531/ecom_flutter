@@ -21,10 +21,10 @@ class _AddToCartState extends State<AddToCart> {
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         width: double.infinity,
-        height: 70,
+        height: 80,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: black,
+          color: kprimaryColor,
         ),
         padding: const EdgeInsets.symmetric(horizontal: 15),
         alignment: Alignment.center,
@@ -34,7 +34,7 @@ class _AddToCartState extends State<AddToCart> {
             Container(
               height: 40,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: white, width: 2)),
               child: Row(
                 children: [
@@ -73,39 +73,39 @@ class _AddToCartState extends State<AddToCart> {
                 ],
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                provider.toggleFavourite(widget.product);
-                const snackbar = SnackBar(
-                  clipBehavior: Clip.antiAlias,
-                  dismissDirection: DismissDirection.horizontal,
-                  backgroundColor: green,
-                  elevation: 5,
-                  behavior: SnackBarBehavior.fixed,
-                  content: Text(
-                    "Added to Cart",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 25),
-                  ),
-                  duration: Duration(seconds: 2),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackbar);
-              },
-              child: Container(
-                height: 55,
-                decoration: BoxDecoration(
-                  color: bgDrizzleLight,
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Text(
-                  "Add to Cart",
-                  style: TextStyle(color: white, fontWeight: FontWeight.bold),
-                ),
+            Container(
+              height: 45,
+              decoration: BoxDecoration(
+                color: white,
+                borderRadius: BorderRadius.circular(30),
               ),
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: IconButton(
+                  onPressed: () {
+                    provider.toggleFavourite(widget.product);
+                    const snackbar = SnackBar(
+                      dismissDirection: DismissDirection.horizontal,
+                      backgroundColor: green,
+                      elevation: 5,
+                      behavior: SnackBarBehavior.floating,
+                      content: Text(
+                        "Added to Cart",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 25),
+                      ),
+                      duration: Duration(seconds: 1),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                  },
+                  icon: Icon(
+                    Icons.add_shopping_cart_rounded,
+                    color: bgThunderstorm,
+                    size: 30,
+                    semanticLabel: "Add to Cart",
+                  )),
             )
           ],
         ),

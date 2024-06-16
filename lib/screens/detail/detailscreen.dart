@@ -18,7 +18,8 @@ class DetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: offWhite,
       floatingActionButton: AddToCart(product: product),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       body: SafeArea(
         child: Column(
@@ -45,7 +46,8 @@ class DetailScreen extends StatelessWidget {
               height: 10,
             ),
             Expanded(
-              child: TitleDetailScreen(product: product),
+              child: SingleChildScrollView(
+                  child: TitleDetailScreen(product: product)),
             ),
           ],
         ),
