@@ -5,8 +5,14 @@ import 'package:ecom/styles/custom_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
+
+  @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
   void navigateToDetailScreen(BuildContext context, Product product) {
     context.pushNamed('details', extra: product);
   }
@@ -14,16 +20,22 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = CartProvider.of(context);
+    productQuantity(IconData icon, int index) {
+      return GestureDetector(
+        onTap: () {
+          setState(() {
+            icon == Icons.add
+                ? provider.incrementQtn(index)
+                : provider.decrementQtn(index);
+          });
+        },
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("My Cart", style: CustomTextStyles.title(context)),
         backgroundColor: kprimaryColor,
-        // leading: IconButton(
-        //   icon: Icon(Icons.arrow_back, color: white),
-        //   onPressed: () {
-        //     context.pop();
-        //   },
-        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -32,6 +44,7 @@ class CartScreen extends StatelessWidget {
             children: [
               Expanded(
                 child: ListView.builder(
+                  shrinkWrap: true,
                   itemCount: provider.cart.length,
                   itemBuilder: (context, index) {
                     final cartItem = provider.cart[index];
@@ -62,6 +75,7 @@ class CartScreen extends StatelessWidget {
                                 height: 100,
                                 width: 90,
                                 decoration: BoxDecoration(
+                                  color: greylight,
                                   borderRadius: BorderRadius.circular(15),
                                   image: DecorationImage(
                                     image: AssetImage(cartItem.primaryImage),
@@ -124,14 +138,64 @@ class CartScreen extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 10),
                                     Text(
-                                      cartItem.category!,
-                                      style: CustomTextStyles.subtitle(context),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    Text(
                                       "\$${cartItem.price!}",
                                       style: CustomTextStyles.priceTag(context),
                                     ),
+                                    const SizedBox(height: 10),
+                                    Divider(
+                                      thickness: 2,
+                                      color: grey,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "Remove",
+                                          style: CustomTextStyles.subtitle(
+                                              context),
+                                        ),
+                                        IconButton(
+                                            onPressed: () {
+                                              provider.cart.removeAt(index);
+                                              setState(() {});
+                                            },
+                                            icon: Icon(
+                                              Icons.delete,
+                                              color: red,
+                                            )),
+                                        //Text("|"),
+                                        Container(
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                              color: transparent,
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              border: Border.all(
+                                                  color: grey, width: 2)),
+                                          child: Row(
+                                            children: [
+                                              IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(
+                                                    Icons.remove,
+                                                    color: black,
+                                                  )),
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              const SizedBox(
+                                                width: 5,
+                                              ),
+                                              IconButton(
+                                                  onPressed: () {},
+                                                  icon: Icon(
+                                                    Icons.add,
+                                                    color: black,
+                                                  ))
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    )
                                   ],
                                 ),
                               ),
